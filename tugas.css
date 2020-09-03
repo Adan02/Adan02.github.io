@@ -8,9 +8,13 @@
     padding: 25px;
     margin:0;
 }
+#TCcP{
+    text-align: justify;
+    margin-right: 200px;
+}
 #parralax{
     /*gambar*/
-    background-image: url("bangunan.jpg");
+    background-image: url("sphere.jpg");
     /*spesifik height*/
     min-height: 500px;
     /*aturan*/
@@ -19,7 +23,17 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
-#border{
+#navbar{
+    background-color:rgb(18, 37, 41);
+    background-attachment: fixed;
+    letter-spacing: 0px;
+    padding: 10px;
+}
+#navbar ul{
+    margin-left: 50px;
+    text-decoration: none;
+} 
+#Kotak{
     font-size: 25px;
     background-color:rgb(18, 37, 41) ;
     color: aliceblue;
@@ -43,7 +57,7 @@ label{
     color: aliceblue;
     padding: 20px;
 }
-button ,home{
+button,a{
     background-color:rgb(18, 37, 41) ;
     color: aliceblue;
     letter-spacing: 5px;
