@@ -39,7 +39,7 @@
                     d. FTP (File Transfer Protocol) membuat sambungan ke server atau komputer tertentu untuk mengirim data.<br>
                     e. TelNet, digunakan untuk memberikan akses jarak jauh (remote).<br>
                     f. VoIP (Voice over IP) untuk menelpon melalui Internet, biasanya dalam bentuk UDP.
-                </p>
+                </p><br>
                 <b>2. Transport Layer</b>
                 <p>
                     &emsp;Lapisan transpor bertanggung jawab untuk menyediakan layanan-layanan yang dapat diandalkan 
@@ -78,14 +78,127 @@
             &RightArrow;Membantu perancangan protokol.<br>
         </p>
     </div>
+    <div id="isi3">
+        <h2>Fungsi Layer Transport</h2><br>
+        <p>
+            <b>1. Tracking Conversation</b>
+            <p>
+                Track seiap arus data antara aplikasi source dan detination. tujuannya agar mengetahui dari mana fata tersebut dikirim/berasal.
+                Dan juga agar diketahui data nantinya akan pergi ke port yang sesuai.
+            </p><br>
+            <b>2. Segmentation</b>
+            <p>
+                Memecah data menjadi segmen yang nantinya akan lebih mudah untuk dikirim/terima. Disini juga terjadi conversation 
+                multiplexing, yaitu segmen-segmen data dari komunikasi/aplikasi yang berbeda-beda.  
+            </p><br>
+            <b>3. Identifikasi Aplikasi</b>
+            <p>
+                Memastikan walau banyak aplikasi yang terbuka di perangkat, semua aplikasi mendapat data yang benar melalui port number.
+            </p><br>
+            <b>4. Memastikan Transfer Data Antar Layer</b>
+            <p>
+                Memastikan data yang ditransfer ke layer session atau ke layer network dalam keadaan sempurna.
+            </p>
+        </p><br>
+    </div>
+    <div id="isi4">
+        <h2>Port Number, Fungsi dan Contoh Proses Kerja</h2><br>
+        <p>
+            <p><h3>Port</h3>
+                    &emsp;Port adalah socket yang terdapat pada perangkat dengan model yang berbeda-beda 
+                sebagai tempat kabel yang berbeda. Port juga berfungsi sebagai tempat komunikasi antara data dalam jaringan 
+                yang di request/dikirim sehingga setiap protokol dalam layer aplikasi mengetahui tempat menerima/mengirim data dalam jaringan
+                agar tidak terjadinya data yang tercampur.
+            </p><br>
+            <p><h3>Port Number</h3>
+                &emsp; Port Number adalah port dengan angka 16-bit (dua byte) dan diklasifikasikan dengan jenis protokol transport 
+                apa yang digunakan, ke dalam Port TCP dan Port UDP. Karena memiliki angka 16-bit, 
+                maka total maksimum jumlah port untuk setiap protokol transport yang digunakan adalah 65536 buah. Dilihat dari penomorannya,
+                terdapat tiga jenis port, yaitu :
+            </p><br>
+            <p>
+                &RightArrow; Well known Ports (Nomor 0 sampai 1023) nomor-nomor ini digunakan untuk layanan dan aplikasi.<br>
+                &RightArrow; Registered Ports (Nomor 1024 sampai 49151) nomor-nomor ini digunakan oleh pihak-pihak yang telah
+                memesannya, didaftarkan oleh Internet Assigned Number Authority (IANA) tapi tidak berlaku permanen.<br>
+                &RightArrow; Dynamically Assigned Port atau Private Ports (Nomor 49152 sampai 65535) merupakan port-port yang ditetapkan oleh sistem operasi 
+                atau aplikasi yang digunakan untuk melayani request dari pengguna sesuai dengan kebutuhan.
+            </p><br>
+            <p><h3>Fungsi Port</h3>
+                &RightArrow; Memisahkan proses transfer/request data dari layanan atau aplikasi berbeda.<br>
+                &RightArrow; Port ethernet adalah untuk LAN.<br>
+                &RightArrow; Dapat menghubungkan satu perangkat dengan perngkat lainnya.<br> 
+            </p><br>
+            <p><h3>Contoh Proses Kerja</h3>
+                <img src="TCPproses.jpg" width="250px" height="200px">&emsp; &emsp;
+                <img src="TCPproses2.jpg" width="250px" height="200px"> <br>
+                &emsp;Dalam proses transmisi TCP terdapat client dan server yang saling terhubung dan melakukan request/transfer data.
+                Server memiliki port kategori Well Known dan menangani beberapa layanan. Sedangkan perangkat memiliki Dynamical Port, awalnya
+                client me-request sebuah data ke destination port yaitu milik server. Setelah server memproses data, maka server mengirimkannya ke
+                port milik client yang bertipe Dynamical Port.<br>
+            </p>
+        </p><br>
+    </div>
+    <div id="isi5">
+        <h2> UDP (User Datagram Protocol)</h2>
+        <p>
+            &emsp;User Datagram Protocol adalah salah satu protocol yang ada pada transport 
+            layer. UDP dapat melakukan transmisi data tanpa melakukan komunikasi kepada perangkat yang dituju.
+            UDP lebih cepat dibandingkan TCP karena tidak memerlukan proses Acknowlegdement pada proses transmisi
+            yang dimana lead us kepada kekurangannya yaitu "unreliable" karena data bisa saja hilang atau tidak beraturan
+            karena tidak adanya proses sequencing seperti TCP. Berikut adalah beberapa layanan yang menggunakan UDP :<br>
+            <b>1. VoIP</b>
+            <p>
+                Digunakan untuk telepon menggunakan layanan internet.
+            </p>
+            <b>2. DNS</b>
+            <p>
+                Mengubah nama Domain yang di masukkan menjadi IP Address.
+            </p>
+            <b>3. DHCP</b>
+            <p>
+                Menyebarkan IP Address ke sebuah jaringan secara merata.
+            </p>
+            <b>4. SNMP</b>
+            <p>
+                Me-manage peralatan yang terhubung dalam seatu jaringan IP.
+            </p>
+        </p><br>
+        <div id="isi6">
+            <h2>Checksum</h2>
+            <p>
+                &emsp;Pada dasarnya komunikasi data merupakan proses pengiriman data yang terjadi dari dua atau lebih device 
+                yang terhubung dalam sebuah jaringan, baik local maupun global seperti internet. Namun dalam sebuah proses pengiriman, 
+                tidak dipungkiri dapat terjadi kesalahan berupa ketidak sesuaian data yang dikirim dan diterima atau bahkan dapat terjadi 
+                kegagalan dalam pengiriman. Sehingga dibutuhkan Error Detection dan Error Corection.Checksum adalah skema kesalahan-deteksi 
+                sederhana di mana setiap pesan yang dikirim yang menghasilkan nilai numeric berdasarkan byte dalam pesan.<br><br>
+                <h3>Prinsip Kerja</h3>
+                &emsp;Proses pengecekan metode checksum dapat dilakukan dengan membandingkan checksum yang telah sampai pada receiver 
+                dengan checksum data yang dikirimkan. Apabila terjadi perbedaan nilai pada perbandingan ini, maka terjadi kesalahan atau 
+                error dalam pengiriman data. Pada dasarnya metode ini mirip dengan parity check, perbedaannya adalah jumlah bit pada checksum 
+                lebih besar dan hasil dari penjumlahan data degan checksum harus selalu dibuat nol. (1's complement)<br><br>
+                <h3>Contoh</h3>
+                Dari pengirim <br>
+                &RightArrow;Unit data dibagi ke dalam k seksi yang masing-masing seksi berisi n-bit data.<br>
+                &RightArrow;Semua seksi data tersebut ditambahkan menggunakan 1’s complement untuk mendapatkan jumlahnya.<br>
+                &RightArrow;Jumlah tersebut kemudian dikomplemenkan dan menjadi nilai checksum.<br>
+                &RightArrow;Checksum dikirim bersama dengan data sebagai unit terakhir dalam paket pengiriman.<br><br>
+                Misal: data dikirim dengan bit <b>10101001 &emsp13; 00111001</b><br>
+                Maka hasil penjumlahan = <b>11100010</b> kemudian 1'komplemen menjadi = <b>00011101</b><br>
+                kemudian dikirim dengan format <b>10101001 &emsp13; 00111001 &emsp13; 00011101</b><br><br>
+                Dari sisi Penerima<br>
+                Caranya sama dengan cara sebelumnya, jika hasilnya nol "0" semua, maka tidak terdapat error.<br>
+                Jumlah dari <b>10101001 &emsp13; 00111001 &emsp13; 00011101</b> = <b>11111111</b><br>
+                Kemudian dikomplemenkan menjadi = <b>00000000</b>
+            </p>
+        </div>
+    </div>
     <div id="parralax" style="min-height: 300px;">
         <div id="caption2">
         </div>
-    </div>>
+    </div>
     <div id="bottom">
         <p>Created by Andi Afwan Ali</p>
-        <p>Contact Person</p>
-        <p><a href="html.html"><img src="sphere.jpg" height="25px" width="25px"></a></p>
+        <p>Contact Person<br>(+62)81224504326</p>
     </div>
 </body>
 </html>
