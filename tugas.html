@@ -11,7 +11,7 @@
         <div id="navbar">
             <ul>
                 <li>
-                    <a href="Home.html" style="text-decoration: none;">Home</a>
+                    <a href="Home.html" style="text-decoration: none; color: aliceblue;">Home</a>
                 </li>
             </ul>
         </div>
@@ -40,17 +40,48 @@
                     e. TelNet, digunakan untuk memberikan akses jarak jauh (remote).<br>
                     f. VoIP (Voice over IP) untuk menelpon melalui Internet, biasanya dalam bentuk UDP.
                 </p>
+                <b>2. Transport Layer</b>
+                <p>
+                    &emsp;Lapisan transpor bertanggung jawab untuk menyediakan layanan-layanan yang dapat diandalkan 
+                    kepada protokol-protokol yang terletak di atasnya. Layanan yang dimaksud antara lain: <br><br>
+                    a. Flow Control, yaitu perangkat mentransmisikan data tidak melebihi kemampuan perangkat yang menerima data.<br>
+                    b. Package Sequencing, yaitu membuat data menjadi segmen-segmen kemudian mengurutkannya sebelum dikirim agar penerima
+                    bisa melakukan reassembly dengan mudah.<br>
+                    c. Acknowlegdement, yaitu pengakuan akan data yang diterima telah lengkap atau belum lengkap sehingga data dapat dikirim kembali.<br>
+                    d. Multiplexing, yaitu menggabungkan data dari berbagai sumber dan mengirimkannya ke melalui satu jalur saja.<br>
+                    Protokol yang terdapat dalam transport adalah TCP dan UDP.
+                </p><br>
+                <b>3. Internet Layer</b>
+                <p>
+                    &emsp;Internet layer bertanggungjawab atas transmisi paket data dalam Internet. Protokol yang digunakan dalam layer
+                    ini sebagai berikut : <br><br>
+                    a. IP (Internet Protocol), yaitu connectionless dan unreliable protokol yang menggunakan pengiriman Best-Effort (UDP).<br>
+                    b. ICMP (Internet Control Message Protocol), yaitu mengirim pesan erroer dan memantau antrian data.<br>
+                    c. IGMP (Internet Group Message Protocol), sama dengan ICMP, namun untuk IGMP langsung mengirimkan pesan ke beberapa device sekaligus.
+                </p><br>
+                <b>4. Link Layer</b>
+                <p>
+                    Layer ini sering juga disebut sebagai host-to-network Layer. Layer menangani semua komponen dan proses yang berkaitan
+                    dengan physical link, baik secara fisik maupun logical. Informasi mengenai Teknologi Jaringan yang digunakan juga
+                    ditentukan pada Layer ini. Pada layer ini terdapat protokol-protokol seperti ethernet pada LAN, PPP pada WAN, dan juga
+                    Frame Relay.
+                </p>
             </p>
         </div>
     </div>
-    
-    <!--<img src="Kota.jpg" width="100%" height="500px">-->
-    
-    <div id="parralax">
-        <div id="caption2">
-            <a href="#Kotak"><span>To The Top</span></a>
-        </div>
+    <div id="isi2">
+        <h2>Mengapa Model Referensi dibuat Berlayer</h2>
+        <p>
+            &RightArrow;Mengklasifikasikan kerja dari proses transfer data.<br>
+            &RightArrow;Setiap lapisan mengerjakan pekerjaan spesifik,kemudian diteruskan ke lapisan berikutnya.<br>
+            &RightArrow;Mempermudah pemahaman akan cara kerja transmisi data.<br>
+            &RightArrow;Membantu perancangan protokol.<br>
+        </p>
     </div>
+    <div id="parralax" style="min-height: 300px;">
+        <div id="caption2">
+        </div>
+    </div>>
     <div id="bottom">
         <p>Created by Andi Afwan Ali</p>
         <p>Contact Person</p>
