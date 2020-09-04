@@ -29,27 +29,6 @@
     text-align: center;
     top: 37%;
     width: 100%;
-} 
-#isi{
-    text-align: center;
-    background-color:grey;
-    padding: 25px;
-    margin:0;
-}
-#TCcP{
-    text-align: justify;
-    margin-right: 200px;
-}
-#isi2{
-    background-color: rgb(255, 235, 205);
-    padding: 25px;
-    margin: 0;
-}
-#caption2{
-    position: absolute;
-    text-align: center;
-    top: 250%;
-    width: 100%;
 }
 #Kotak{
     font-size: 25px;
@@ -58,10 +37,39 @@
     padding: 20px;
     letter-spacing: 10px;
 }
-label{
-    background-color: rgb(18, 37, 41) ;
-    color: aliceblue;
-    padding: 20px;
+#isi{
+    text-align: center;
+    background-color:grey;
+    padding: 25px;
+    margin:0;
+}
+#TCcP{
+    text-align: justify;
+    margin-right: 100px;
+}
+#isi2,#isi3{
+    background-color: rgb(255, 235, 205);
+    padding: 25px;
+    margin: 0;
+    text-align: justify;
+}
+#isi3 p{
+    margin-right: 100px;
+}
+#isi4,#isi5{
+    background-color: cadetblue;
+    padding: 25px;
+    margin: 0;
+    text-align: justify;
+}
+#isi4 p, #isi5 p{
+    margin-right: 100px;
+}
+#caption2{
+    position: absolute;
+    text-align: center;
+    top: 250%;
+    width: 100%;
 }
 #bottom{
     text-align: center;
