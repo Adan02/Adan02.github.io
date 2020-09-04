@@ -2,16 +2,6 @@
     margin: 0;
     padding: 0;
 }
-#isi{
-    text-align: center;
-    background-color:grey;
-    padding: 25px;
-    margin:0;
-}
-#TCcP{
-    text-align: justify;
-    margin-right: 200px;
-}
 #parralax{
     /*gambar*/
     background-image: url("sphere.jpg");
@@ -32,19 +22,28 @@
 #navbar ul{
     margin-left: 50px;
     text-decoration: none;
-} 
-#Kotak{
-    font-size: 25px;
-    background-color:rgb(18, 37, 41) ;
     color: aliceblue;
-    padding: 20px;
-    letter-spacing: 10px;
 }
 #caption{
     position: absolute;
     text-align: center;
     top: 37%;
     width: 100%;
+} 
+#isi{
+    text-align: center;
+    background-color:grey;
+    padding: 25px;
+    margin:0;
+}
+#TCcP{
+    text-align: justify;
+    margin-right: 200px;
+}
+#isi2{
+    background-color: blanchedalmond;
+    padding: 25px;
+    margin: 0;
 }
 #caption2{
     position: absolute;
@@ -52,15 +51,17 @@
     top: 250%;
     width: 100%;
 }
+#Kotak{
+    font-size: 25px;
+    background-color:rgb(18, 37, 41) ;
+    color: aliceblue;
+    padding: 20px;
+    letter-spacing: 10px;
+}
 label{
     background-color: rgb(18, 37, 41) ;
     color: aliceblue;
     padding: 20px;
-}
-button,a{
-    background-color:rgb(18, 37, 41) ;
-    color: aliceblue;
-    letter-spacing: 5px;
 }
 #bottom{
     text-align: center;
