@@ -1,9 +1,44 @@
-#Menu{
-    position: absolute;
+*{
+    padding: 0px ;
+    margin: 0px;
 }
-h1{
-    background-color: green;
+body{
+    background-color: whitesmoke;
+}
+.nav{
+    /*gambar*/
+    background-image: url("Hutan.jpg");
+    /*tinggi*/
+    min-height: 400px;
+    /*aturan*/
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.Menu{
+    position: absolute;
+    text-align: center;
+    top: 30px;
+    width: 100%;
+}
+.Kotak{
     color: whitesmoke;
     padding: 20px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color:rgb(47, 134, 206);
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+.konten{
+    width: 100%;
+    color: rgb(47, 134, 206);
+}
+.perkenalan{
+    padding: 10px;
+}
+.perkenalan,h3{
+    border:solid 2px;
+    font-family:'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+}
+.perkenalan h4{
+    text-align: right;
 }
