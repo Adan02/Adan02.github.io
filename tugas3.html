@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taransmission Control Protocol</title>
+    <link rel="stylesheet" href="tugas.css">
+</head>
+<body>
+    <div id="parralax" style="margin: 0; padding: 0;">
+        <div id="navbar">
+            <ul>
+                <li>
+                    <a href="Home.html" style="text-decoration: none; color: aliceblue;">Home</a>
+                </li>
+            </ul>
+        </div>
+        <div id="caption">
+           <span id="Kotak">Tugas 3</span>
+        </div>
+    </div>
+
+    <div id="isi">
+        <h2>MODEL REFERENSI TCP/IP</h2>
+        <div id="TCcP">
+            <img style="float: left; margin:0 8px 4px 0 ;" src="TCP.png" width="250px" height="260px">
+            <p>
+                &emsp;Transmission Control Protocol/ Internet Protocol adalah versi layer yang lebih sederhana dari OSI Layer.
+                TCP/IP bisa diibaratkan bahasa, ketika bertukar informasi, maka kita memerlukan bahasa yang sama dan 
+                dimengerti oleh kedua belah pihak. Melalui TCP/IP, menghubungkan dua buah device atau lebih dalam sebuah network bisa dilakukan.
+                Terdapat 4 lapisan Layer pada TCP/IP yaitu : <br> <br>
+                <b>1. Application Layer</b>
+                <p>
+                    &emsp;Dalam application layer, terdapat berbagai service protokol untuk mengambil data dari suatu server.
+                    Berikut adalah beberapa Service Protokol dalam application layer : <br><br>
+                    a. DNS (Domain Name Service Protokol) berfungsi menerjemahkan nama host menjadi alamat IP.<br>
+                    b. HTTP (Hypertext Transfer Protocol) berfungsi untuk mentransfer file Web dari WWW (World Wide Web).<br>
+                    c. SMTP (Simple Mail Transfer Protocol) untuk transfer data E-mail.<br>
+                    d. FTP (File Transfer Protocol) membuat sambungan ke server atau komputer tertentu untuk mengirim data.<br>
+                    e. TelNet, digunakan untuk memberikan akses jarak jauh (remote).<br>
+                    f. VoIP (Voice over IP) untuk menelpon melalui Internet, biasanya dalam bentuk UDP.
+                </p><br>
+                <b>2. Transport Layer</b>
+                <p>
+                    &emsp;Lapisan transpor bertanggung jawab untuk menyediakan layanan-layanan yang dapat diandalkan 
+                    kepada protokol-protokol yang terletak di atasnya. Layanan yang dimaksud antara lain: <br><br>
+                    a. Flow Control, yaitu perangkat mentransmisikan data tidak melebihi kemampuan perangkat yang menerima data.<br>
+                    b. Package Sequencing, yaitu membuat data menjadi segmen-segmen kemudian mengurutkannya sebelum dikirim agar penerima
+                    bisa melakukan reassembly dengan mudah.<br>
+                    c. Acknowlegdement, yaitu pengakuan akan data yang diterima telah lengkap atau belum lengkap sehingga data dapat dikirim kembali.<br>
+                    d. Multiplexing, yaitu menggabungkan data dari berbagai sumber dan mengirimkannya ke melalui satu jalur saja.<br>
+                    Protokol yang terdapat dalam transport adalah TCP dan UDP.
+                </p><br>
+                <b>3. Internet Layer</b>
+                <p>
+                    &emsp;Internet layer bertanggungjawab atas transmisi paket data dalam Internet. Protokol yang digunakan dalam layer
+                    ini sebagai berikut : <br><br>
+                    a. IP (Internet Protocol), yaitu connectionless dan unreliable protokol yang menggunakan pengiriman Best-Effort (UDP).<br>
+                    b. ICMP (Internet Control Message Protocol), yaitu mengirim pesan erroer dan memantau antrian data.<br>
+                    c. IGMP (Internet Group Message Protocol), sama dengan ICMP, namun untuk IGMP langsung mengirimkan pesan ke beberapa device sekaligus.
+                </p><br>
+                <b>4. Link Layer</b>
+                <p>
+                    Layer ini sering juga disebut sebagai host-to-network Layer. Layer menangani semua komponen dan proses yang berkaitan
+                    dengan physical link, baik secara fisik maupun logical. Informasi mengenai Teknologi Jaringan yang digunakan juga
+                    ditentukan pada Layer ini. Pada layer ini terdapat protokol-protokol seperti ethernet pada LAN, PPP pada WAN, dan juga
+                    Frame Relay.
+                </p>
+            </p>
+        </div>
+    </div>
+    <div id="isi2">
+        <h2>Mengapa Model Referensi dibuat Berlayer</h2>
+        <p>
+            &RightArrow;Mengklasifikasikan kerja dari proses transfer data.<br>
+            &RightArrow;Setiap lapisan mengerjakan pekerjaan spesifik,kemudian diteruskan ke lapisan berikutnya.<br>
+            &RightArrow;Mempermudah pemahaman akan cara kerja transmisi data.<br>
+            &RightArrow;Membantu perancangan protokol.<br>
+        </p>
+    </div>
+    <div id="isi3">
+        <h2>Fungsi Layer Transport</h2><br>
+        <p>
+            <b>1. Tracking Conversation</b>
+            <p>
+                Track seiap arus data antara aplikasi source dan detination. tujuannya agar mengetahui dari mana fata tersebut dikirim/berasal.
+                Dan juga agar diketahui data nantinya akan pergi ke port yang sesuai.
+            </p><br>
+            <b>2. Segmentation</b>
+            <p>
+                Memecah data menjadi segmen yang nantinya akan lebih mudah untuk dikirim/terima. Disini juga terjadi conversation 
+                multiplexing, yaitu segmen-segmen data dari komunikasi/aplikasi yang berbeda-beda.  
+            </p><br>
+            <b>3. Identifikasi Aplikasi</b>
+            <p>
+                Memastikan walau banyak aplikasi yang terbuka di perangkat, semua aplikasi mendapat data yang benar melalui port number.
+            </p><br>
+            <b>4. Memastikan Transfer Data Antar Layer</b>
+            <p>
+                Memastikan data yang ditransfer ke layer session atau ke layer network dalam keadaan sempurna.
+            </p>
+        </p><br>
+    </div>
+    <div id="isi4">
+        <h2>TCP</h2><br>
+        <p>
+            <p><h3>Pengertian TCP dan Prinsip Kerja</h3>
+                    &emsp;TCP (Transmission Control Protokol) adalah salah satu dari protokol internet yang digunakan dalam layer Transport. TCP digunakan
+                    dalam proses transfer data, TCP bersifat reliable transfer karena memastikan segmen yang di transfer terkirim sempurna dan 
+                    sesuai urutan. Jika terjadi kesalahan atau kehilangan data pada sisi penerima, maka TCP melakukan pengiriman ulang data yang diperlukan.   
+                    TCP memiliki hubungan transfer data pada beberapa layanan service pada layer Application, yaitu :<br>
+                    &RightArrow; FTP (File Data Protocol)<br>
+                    &RightArrow; SSH (Secure Shell)<br>
+                    &RightArrow; SMTP (Simple Mail Transfer Protocol)<br>
+                    &RightArrow; HTTP (Hypertext Transfer Protocol)<br>
+                    &RightArrow; HTTPS (Hypertext Transfer Protocol Secure)<br>
+                    &RightArrow; IMAP (Internet Message Access Protocol)
+            </p><br>
+            <p><h3>Prnsip Kerja</h3>
+                <img src="TCPproses.jpg" width="250px" height="200px">&emsp; &emsp;
+                <img src="TCPproses2.jpg" width="250px" height="200px"> <br>
+                &emsp;Dalam proses transmisi TCP terdapat client dan server yang saling terhubung dan melakukan request/transfer data.
+                Server memiliki port kategori Well Known dan menangani beberapa layanan. Sedangkan perangkat memiliki Dynamical Port, awalnya
+                client me-request sebuah data ke destination port yaitu milik server. Setelah server memproses data, maka server mengirimkannya ke
+                port milik client yang bertipe Dynamical Port.<br>
+            </p>
+        </p><br>
+    </div>
+    <div id="isi5"><!--isi6 ada di dalam -->
+        <h2>Struktur Segmen TCP</h2>
+        <p>
+            <img src="StrukturSegment.png" alt="TCP HEADER" width="" height="">
+        </p><br>
+        <p>
+            &RightArrow; Source dan Destination Port : Digunakan untuk mengidentifikasi layanan aplikasi tujuan.<br>
+            &RightArrow; Sequence Number : Digunakan untuk pengumpulan kembali data saat sampai tujuan (reassembly).<br>
+            &RightArrow; Acknowlegment Number : Memberikan informasi ketika data yang dikirim telah sampai dan siap untuk pengiriman baru.
+            Jika data hilang sebagian, maka menginformasikan untuk pengiriman data kembali.<br>
+            &RightArrow; Header lenght : Menunjukkan panjang header TCP.<br>
+            &RightArrow; Reserved : Bagian ini adalah header cadangan, biasanya diabaikan oleh penerima.<br>
+            &RightArrow; Control Bits : Menunjukkan tujuan dan fungsi segmen TCP. Bagian ini terdiri dari:<br>
+            &emsp13; &emsp13; &emsp13; &emsp13; a. URG : Berfungsi sebagai data penting yang didahulukan.<br>
+            &emsp13; &emsp13; &emsp13; &emsp13; b. PSH : Berfungsi mengubah transmisi menjadi mode push.<br> 
+            &emsp13; &emsp13; &emsp13; &emsp13; c. ACK : Berfungsi sebagai konfirmasi paket boleh dikirmkan dan didefinisikan dalam 
+            Acknowlegde Number.<br>
+            &emsp13; &emsp13; &emsp13; &emsp13; d. RST : Digunakan saat koneksi akan di akhiri, atau jika terjadi kendala dan harus mematikan koneksi.<br>
+            &emsp13; &emsp13; &emsp13; &emsp13; e. SYN : Yaitu Synchronize, berfungsi untuk membentuk koneksi antar device.<br>
+            &emsp13; &emsp13; &emsp13; &emsp13; f. FIN : Penutupan konesi saat semua data telah terkirim dengan baik.<br>
+            &RightArrow; Window Size : Jumlah byte yang bisa diterima sekaligus. Bagian ini juga membatasi jumlah byte yang dikirim.<br>
+            &RightArrow; Checksum :  Digunakan untuk pengecekan kesalahan pada header segmen dan data.<br>
+            &RightArrow; Urgent : Header ini akan aktif jika URG pada Control Bit aktif. Urgent Pointer menunjukkan lokasi data yang akan 
+            ditransmisikan dengan mode urgent.
+        </p><br>
+        <div id="isi6">
+            <h2>Flow Control</h2>
+            <p style="margin-right: 100px;">
+                &emsp;Pembatasan bytes yang bisa diterima oleh mesin penerima agar reliability transmisi dapat terjaga.
+                Ketika Source sudah menerima Acknowlegde bahwa bytes sudah diterima, maka source bisa menambahkannya lagi.<br><br>
+                <h3>Window Size dan Acknowlegdement</h3>
+                <img src="FlowCOntrol.jpg" alt="Flow Control" ><br>
+                <p style="margin-right: 100px;">&emsp;Untuk mengefisienkan pengiriman data, digunakan window size untuk menentukan seberapa besar ukuran
+                yang dapat diterima oleh penerima, kemudian pengirim mengirim dengan byte-byte yang nantinya mencukupi ukuran window size, 
+                kemudian mengirimkan pernyataan Acknowlegde. Biasanya, pengirim tidak perlu menunggu penerima mengirim Acknowlegde 
+                sampai semua bytes yang dikirim sampai, acknowlege dikirim sementara pengirim mengirim segmentnya(bytes). <br><br></p>
+            </p>
+        </div>
+    </div>
+    <div id="isi7">
+        <h2>Mekanisme Pembukaan dan Penutupan Hubungan Komunikasi</h2>
+        <img src="Establisment.png" alt="Establishment" ><br>
+        <p>
+            <b>Establishment</b><br>
+            1. Inisiasi client meminta koneksi kepada server.<br>
+            2. Server acknowlege dan me-request session dengan client.<br>
+            3. Client acknowlege dan membentuk session dengan server.<br><br>
+        </p>
+        <img src="Termination.png" alt="Termination"><br>
+        <p>
+            <b>Termination</b><br>
+            1. Client Mengirim flag FIN (Finish) yang berada pada control bit TCP Header.<br>
+            2. Untuk mengakhiri session, server melakukan two-way handshakes yaitu mengirim ACK,dan FIN kepada Client.<br>
+            3. Client meng-acknowledge FIN dari Sever dan mengakhiri koneksi.
+        </p><br><br>
+    </div>
+    <div id="isi8">
+        <h3>Mengatasi Kongesti</h3><br>
+        <img src="kongesti.png" alt="Kongesti"><br>
+        <p>
+            Ada dua teknik yang digunakan untuk mengatasi kongesti:<br>
+            1. Additive increase: meningkatkan congestion window (cwnd) sampai ukuran segment maksimum (MSS) pada setiap RTT sampai loss terdeteksi.<br>
+            2. Multiplicative decrease, TCP akan menurunkan kecepatan sampai 50% dari kecepatan tertinggi ketika loss terdeteksi.<br>
+            Untuk cara pertama :<br>
+            &RightArrow; Pada saat memulai koneksi, kecepatan ditingkatkan secara eksponensial sampai terjadi loss pertama.<br>
+            &RightArrow; Permulaan cwnd = 1 MSS , Menggandakan cwnd setiap round trip time (RTT).<br>
+            &RightArrow; Dilakukan dengan meningkatkan cwnd setiap kali ACK diterima.<br>
+            Untuk cara kedua :<br>
+            &RightArrow; Mengurangi nomor byte yang dikirim disebabkan tidak menerima Acknowlegde dari server.<br>
+        </p>
+    </div>
+    <div id="parralax" style="min-height: 300px;">
+        <div id="caption2">
+        </div>
+    </div>
+    <div id="bottom">
+        <p>Created by Andi Afwan Ali</p>
+        <p>Contact Person<br>(+62)81224504326</p>
+    </div>
+</body>
+</html>
