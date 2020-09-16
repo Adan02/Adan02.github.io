@@ -65,6 +65,18 @@
 #isi4 p, #isi5 p{
     margin-right: 100px;
 }
+#isi6 p{
+    margin-right: 100px;
+}
+#isi7,#isi8{
+    background-color: aqua;
+    padding: 25px;
+    margin: 0;
+    text-align: justify;
+}
+#isi7 p, #isi8 p{
+    margin-right: 100px;
+}
 #caption2{
     position: absolute;
     text-align: center;
