@@ -35,13 +35,13 @@
     background-color:rgb(18, 37, 41) ;
     color: aliceblue;
     padding: 20px;
-    letter-spacing: 10px;
 }
 #isi{
     text-align: center;
     background-color:grey;
     padding: 25px;
     margin:0;
+    font-family: sans-serif;
 }
 #TCcP{
     text-align: justify;
@@ -52,6 +52,10 @@
     padding: 25px;
     margin: 0;
     text-align: justify;
+    font-family: sans-serif;
+}
+#isi2 p{
+    margin-right: 100px;
 }
 #isi3 p{
     margin-right: 100px;
