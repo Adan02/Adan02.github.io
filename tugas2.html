@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transmission Control Protocol</title>
+    <link rel="stylesheet" href="tugas.css">
+</head>
+<body>
+    <div id="parralax" style="margin: 0; padding: 0;">
+        <div id="navbar">
+            <ul>
+                <li>
+                    <a href="Home.html" style="text-decoration: none; color: aliceblue;">Home</a>
+                </li>
+            </ul>
+        </div>
+        <div id="caption">
+           <span id="Kotak">Pemodelan Protokol Komunikasi Layer Transport Menggunakan Finite State Machine</span>
+        </div>
+    </div>
+
+    <div id="isi">
+        <h2>FSM Sender</h2>
+        <img src="FSM_Sender.png" height="100%" style="display: block; margin: 10px auto; text-align: center;" >
+        <div id="TCcP">
+            <p>
+                &emsp; Pada gambar diatas ini adalah Finite State Machine tipe reliable data transport 3.0 (rdt 3.0 sender). Yang dimana
+                Sender dilengkapi timer ACK (Acknowlegdement) untuk setiap data yang dikirim. Jika ACK tidak diterima, maka dia mengirim
+                kembali data kepada receiver. Jika pada receiver ternyata delay dalam mengirim ACK sehingga paket terduplikasi, maka
+                field sequance number dari header akan membuat paket/data terduplikasi tidak diteruskan. Berikut cara kerja FSM rdt 3.0 Sender: <br><br>
+                <b>State 1 (Wait for call 0 from above)</b>
+                <p>
+                    &emsp; Menunggu dari layer aplikasi. Ketika diberi perintah <br>
+                    <b>•rdt_send (data)</b> berarti data dari layer aplikasi telah 
+                    diterima kemudian mengeksekusi fungsi: <br><br>
+                    &rarr;  <b>sndpkt=make_pkt(0, data, checksum)</b> berfungsi untuk membuat paket dan memberi sequence number 0 dan menyertakan checksum.<br>
+                    &rarr;  <b>udt_send(sndpkt) </b>mengirimkan paket kesisi penerima.<br>
+                    &rarr;  <b>start_timer </b>berarti countdown timer dimulai.
+                </p><br>
+                <b>State 2 (Wait for ACK 0)</b>
+                <p>
+                    &emsp; Menunggu ACK 0. Terdapat 3 fungsi yang dieksekusi:<br>
+                    <b>•rdt_rcv (rcvpkt) && (corrupt (rcvpkt) || isACK(rcvpkt,1)</b> fungsi ini dijalankan jika sender menerima ACK 1 (seharusnya ACK 0). Hal ini berarti ACK yang 
+                    diterima sender telah corrupt atau rusak. Sehingga tindakan selanjutnya yang dilakukan adalah <b>∧</b> atau tidak melakukan tindakan apapun.<br>
+                    <b>•timeout</b> berarti countdown timer yang diberikan telah habis dan state belum juga menerima ACK 0, maka akan dijalankan tindakan berikutnya yaitu:<br>
+                    &rarr;  <b>udt_send (sndpkt)</b> berfungsi untuk mengirim ulang paket.<br>
+                    &rarr; <b>start_timer</b> berarti countdown timer kembali diulang.<br>
+                    <b>•rdt_rcv (rcvpkt) && (notcorrupt (rcvpkt) && isACK(rcvpkt,0)</b> fungsi ini dijalankan jika sender telah menerima ACK 0. Hal ini berarti ACK yang 
+                    diterima sender sudah benar dan tidak rusak. Sehingga tindakan selanjutnya adalah <b>stop_timer</b> atau menghentikan countdown timer.
+                </p><br>
+                <b>State 3 (Wair for call 1 from above)</b>
+                <p>
+                    &emsp; Kembali menunggu perintah dari layer aplikasi. Jika perintah diberikan, maka akan dijalankan:<br>
+                    <b>•rdt_rcv (rcvpkt)</b> fungsi ini hanya berjalan ketika dalam kasus premature timeout. Premature time out 
+                    artinya ketika sender menerima 2 ACK pada paket yang sama kemudian salah satu ACK telah diterima maka ACK 
+                    lainnya akan diabaikan dengan menjalankan fungsi <b>∧</b> (tidak melakukan tindakan apapun).<br>
+                    <b>•rdt_send(data)</b> berarti data dari atas (layer aplikasi) telah diterima, maka akan dijalankan fungsi berikut:<br>
+                    &rarr; <b>sndpkt=make_pkt(1, data, checksum)</b> berfungsi untuk membuat paket dan memberi sequence number 1 dan menyertakan checksum.<br>
+                    &rarr; <b>udt_send(sndpkt)</b> mengirimkan paket kesisi penerima.<br>
+                    &rarr; <b>start_timer</b> berarti countdown timer dimulai.  
+                </p><br>
+                <b>State 4 (Wait for ACK 1)</b> 
+                <p>
+                    &emsp; State ini menunggu ACK 1. Ada 3 fungsi yang akan dijalankan untuk mengecek apakah paket utuh atau corrupt<br>
+                    <b>•rdt_rcv (rcvpkt) && (corrupt (rcvpkt) || isACK(rcvpkt,0)</b> fungsi ini dijalankan jika sender menerima ACK 0 (seharusnya ACK 1). 
+                    Hal ini berarti ACK yang diterima sender telah corrupt atau rusak. Sehingga tindakan selanjutnya yang dilakukan adalah 
+                    atau tidak melakukan tindakan apapun.<br>
+                    <b>•timeout</b> berarti countdown timer yang diberikan telah habis dan state belum juga menerima ACK 1, maka akan dijalankan tindakan berikutnya adalah<br>
+                    &rarr; <b>udt_send (sndpkt)</b> untuk mengirim ulang paket.<br>
+                    &rarr; <b>start_timer</b> countdown timer diulang kembali.<br>
+                    <b>•rdt_rcv (rcvpkt) && (notcorrupt (rcvpkt) && isACK(rcvpkt,0)</b> fungsi ini dijalankan jika sender telah menerima ACK 1. Hal ini berarti 
+                    ACK yang diterima sender sudah benar dan tidak rusak. Sehingga tindakan selanjutnya adalah <b>stop_timer</b> atau menghentikan countdown timer.
+                </p>
+            </p>
+        </div>
+    </div>
+    <div id="isi2">
+        <h2 style="text-align: center;">FSM Receiver</h2>
+        <img src="FSM_Receiver.jpg" height="100%" style="display: block; margin: 10px auto; text-align: center;" >
+        <p>
+            <b style="font-size: 20px;">State 1 (Wait for 0 from below)</b> <br>
+            &emsp; state ini menunggu perintah dari bawah (layer data link). Ketika perintah diberikan maka akan dilakukan fungsi:<br>
+            <b>•rdt_rcv (rcvpkt) && notcorrupt (rcvpkt) && has_seq0(rcvpkt)</b> Fungsi ini berarti sebuah paket telah diterima dari layer 
+            bawah dan paket tersebut tidak corrupt serta paket tersebut memiliki sequence number 0. Karena sequence number 0 sesuai dengan 
+            yang diminta, maka akan dilakukan tindakan selanjutnya yaitu <br>
+            &rarr; <b>Extract(rcvpkt,data)</b> akan mengekstrak paket data.<br>
+            &rarr; <b>deliver_data (data)</b> akan mengirim paket data ke layer aplikasi.<br>
+            &rarr; <b>sndpkt=make_pkt(ACK, 0, checksum)</b> berfungsi untuk membuat paket yang berisi ACK dan memberi sequence number 0 
+            dan menyertakan checksum.<br>
+            &rarr; <b>udt_send(sndpkt)</b> berfungsi untuk mengirim paket ke sisi sender.<br><br>
+
+            <b style="font-size: 20px;">State 2 (Wait 1 from below)</b><br>
+            &emsp; State ini menunggu perintah dari bawah (layer data link). Ketika perintah diberikan maka akan dilakukan fungsi 
+            berikut untuk mengecek apakah paket rusak atau tidak.<br>
+            <b>•rdt_rcv (rcvpkt) && corrupt (rcvpkt) </b>akan dijalankan ketika paket yang diterima corrupt, maka tindakan yang akan 
+            dijalankan adalah : <br>
+            &rarr; <b>sndpkt=make_pkt(ACK,0,checksum)</b> akan membuat kembali paket yang berisi ACK dan memberi sequence number 0 
+            dan menyertakan checksum.<br>
+            &rarr; <b>udt_send(sndpkt)</b> berfungsi untuk mengirim kembali paket ke sisi sender untuk memberitahu jika paket rusak.<br><br>
+            <b>•rdt_rcv (rcvpkt) && notcorrupt && has_seq0(rcvpkt)</b> akan dijalankan jika data utuh dan tidak corrupt, maka tindakan 
+            yang akan dijalankan adalah : <br>
+            &rarr; <b>sndpkt=make_pkt(ACK,0,checksum)</b> akan membuat paket yang berisi ACK dan memberi sequence number 0 dan 
+            menyertakan checksum.<br>
+            &rarr; <b>udt_send(sndpkt)</b> berfungsi untuk mengirim paket ke sisi sender untuk memberi tahu jika paket sampai dan tidak rusak.<br><br>
+            <b>•rdt_rcv (rcvpkt) && notcorrupt && has_seq1(rcvpkt)</b> dijalankan jika sebuah paket telah diterima dari layer bawah dan 
+            paket tersebut tidak corrupt serta memiliki sequence number 1. Maka tindakan selanjutnya adalah: <br>
+            &rarr; <b>Extract(rcvpkt,data)</b> akan mengekstrak paket data.<br>
+            &rarr; <b>deliver_data (data)</b> akan mengirim paket data ke layer aplikasi.<br>
+            &rarr; <b>sndpkt=make_pkt(ACK, 1, checksum)</b> akan membuat paket yang berisi ACK dan memberi sequence number 1 dan menyertakan checksum.<br>
+            &rarr; <b>udt_send(sndpkt)</b> akan mengirim paket ke sisi sender.<br><br>
+
+            <b style="font-size: 20px;">Kembali ke State 1</b><br>
+            &emsp; State 1 menunggu perintah dari bawah. Ketika perintah diberikan maka akan dilakukan pengecekan paket apakah paket tersebut 
+            rusak atau tidak dengan menggunakan fungsi berikut :<br>
+            <b>rdt_rcv (rcvpkt) && notcorrupt && has_seq1(rcvpkt)</b> akan dijalankan jika data utuh dan tidak corrupt, 
+            maka tindakan yang akan dijalankan adalah :<br>
+            &rarr; <b>sndpkt=make_pkt(ACK,1,checksum)</b> akan membuat paket yang berisi ACK dan memberi sequence number 1 dan menyertakan checksum.<br>
+            &rarr; <b>udt_send(sndpkt)</b> berfungsi untuk mengirim paket ke sisi sender untuk memberi tahu jika paket sampai dan tidak rusak.<br><br>
+            <b>rdt_rcv (rcvpkt) && corrupt (rcvpkt)</b> akan dijalankan ketika paket yang diterima corrupt, maka tindakan yang akan dijalankan adalah: <br>
+            &rarr; <b>sndpkt=make_pkt(ACK,1,checksum)</b> akan membuat kembali paket yang berisi ACK dan memberi sequence number 1 dan menyertakan checksum.<br>
+            &rarr; <b>udt_send(sndpkt)</b> berfungsi untuk mengirim kembali paket ke sisi sender untuk memberitahu jika paket rusak.
+        </p>
+    </div>
+    <div id="parralax" style="min-height: 300px;">
+        <div id="caption2">
+        </div>
+    </div>
+    <div id="bottom">
+        <p>Created by Andi Afwan Ali</p>
+        <p>Contact Person<br>(+62)81224504326</p>
+    </div>
+</body>
+</html>
