@@ -1,0 +1,61 @@
+/*margin: 10px 0px;(nanti kasih semua h)*/
+body{
+    background-color: rgb(234, 244, 245);
+}
+.pembungkus_konten{
+    max-width: 1400px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+header{
+    text-align: center;
+}
+h1,h2,p,b {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 10px 0px;
+}
+.wrapper,.wrapper2{
+    width: 40%;
+    float: left;
+    padding: 16px;
+}
+.perkenalan, .riwayat_pendidikan{
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%);
+    background-color: #fff;
+    
+}
+.margin{
+    margin: 16px;
+
+}
+.Afwan{
+    width: 100%;
+    max-height: 400px;
+    max-width: 400px;
+}
+.isi{
+    padding: 16px;
+}
+span{
+    padding: 16px;
+}
+.tabel{
+    padding: 16px;
+}
+.tabel th{
+    border : solid;
+    border-color: black;
+    border-width : 2px;
+    background-color :rgb(52, 112, 112);
+    width: 20%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+}
+.tabel td{
+    text-align: center;
+    padding : 0px 0px;
+    border : solid;
+    border-width : 2px;
+    background-color : white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
