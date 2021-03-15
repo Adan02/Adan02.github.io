@@ -1,0 +1,10 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin : 10px;
+}
+body {
+    background-color: rgb(234, 244, 245);
+}
+#a,#b,#c{
+    width: 100px;
+}

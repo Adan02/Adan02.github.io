@@ -26,6 +26,11 @@ h1,h2,p,b,a{
     float: left;
     padding: 16px;
 }
+.wrapper3setengah{
+    width: 92.7%;
+    float: left;
+    padding : 16px;
+}
 .wrapper3{
     width: 92.7%;
     float: left;
@@ -36,7 +41,7 @@ h1,h2,p,b,a{
     float: left;
     padding:16px ;
 }
-.perkenalan, .riwayat_pendidikan, .Keterampilan, .riwayat_pelatihan, .bottom,.bottom_penutup{
+.perkenalan, .riwayat_pendidikan, .Keterampilan, .riwayat_pelatihan, .bottom,.bottom_penutup, .bottomawal{
     box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%);
     background-color: #fff;
 }
