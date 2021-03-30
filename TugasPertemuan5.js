@@ -75,4 +75,4 @@ let data = {
     get getEmail(){
         return this.email;
     } 
-};
+}
