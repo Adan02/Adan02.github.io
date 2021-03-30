@@ -1,0 +1,20 @@
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    background-color: rgb(234, 244, 245);
+}
+#isiData{
+   background-color: rgb(204, 211, 212);
+   width: 30%;
+   border-radius: 15px;
+   padding: 10px;
+   box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%);
+}
+table{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(204, 211, 212);
+    border-collapse: separate;
+}
