@@ -22,9 +22,9 @@ var tabel = document.getElementById("tabel"),
         baris.insertCell().appendChild(document.createTextNode(data.email));
 
         var Hapus = document.createElement("input");
-            btnHapus.type = "button";
-            btnHapus.value = "Hapus";    
-            btnHapus.id = data.nim;       
+            Hapus.type = "button";
+            Hapus.value = "Hapus";    
+            Hapus.id = data.nim;       
             baris.insertCell().appendChild(Hapus);
     
         if(data.nama == "" || data.nim  == "" || data.prodi == "" || data.email == ""){
@@ -41,7 +41,7 @@ var tabel = document.getElementById("tabel"),
     }
     
 form.addEventListener("submit",tampilkanData,false);
-tabel.addEventListener("click", hapusData, false); 
+tabel.addEventListener("click", hapusData, true); 
 
 let data = {
     nama : "",
