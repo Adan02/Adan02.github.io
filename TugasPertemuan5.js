@@ -1,55 +1,53 @@
 var tabel = document.getElementById("tabel"),
     form = document.getElementById("isiData");
 
-function tampilkanData(e){
-    var tabel = document.getElementById("tabel"),
-        name = document.getElementById("isiNama"),
-        nim = document.getElementById("isiNIM");
-        prodi = document.getElementById("isiProdi");
-        email = document.getElementById("isiEmail");
+    function tampilkanData(e){
+        var tabel = document.getElementById("tabel"),
+            name = document.getElementById("isiNama"),
+            nim = document.getElementById("isiNIM");
+            prodi = document.getElementById("isiProdi");
+            email = document.getElementById("isiEmail");
         
-    data.nama = name.value;
-    data.nim = nim.value;
-    data.prodi = prodi.value;
-    data.email = email.value;
+        data.nama = name.value;
+        data.nim = nim.value;
+        data.prodi = prodi.value;
+        data.email = email.value;
 
-    var baris = tabel.insertRow();
+        var baris = tabel.insertRow();
 
-    baris.id = data.nim;
-    baris.insertCell().appendChild(document.createTextNode(data.nama));
-    baris.insertCell().appendChild(document.createTextNode(data.nim));
-    baris.insertCell().appendChild(document.createTextNode(data.prodi));
-    baris.insertCell().appendChild(document.createTextNode(data.email));
+        baris.id = data.nim;
+        baris.insertCell().appendChild(document.createTextNode(data.nama));
+        baris.insertCell().appendChild(document.createTextNode(data.nim));
+        baris.insertCell().appendChild(document.createTextNode(data.prodi));
+        baris.insertCell().appendChild(document.createTextNode(data.email));
 
-    var Hapus = document.createElement("input");
-        btnHapus.type = "button";
-        btnHapus.value = "Hapus";    
-        btnHapus.id = data.nim;       
-        baris.insertCell().appendChild(Hapus);
+        var Hapus = document.createElement("input");
+            btnHapus.type = "button";
+            btnHapus.value = "Hapus";    
+            btnHapus.id = data.nim;       
+            baris.insertCell().appendChild(Hapus);
     
-    if(data.nama == '' || data.nim  == '' || data.prodi == '' || data.email == ''){
-        alert("Harap lengkapi formulir sebelum menekan tombol daftar");
-        tabel.deleteRow();
+        if(data.nama == "" || data.nim  == "" || data.prodi == "" || data.email == ""){
+            alert("Harap lengkapi formulir sebelum menekan tombol daftar");
+            tabel.deleteRow();
+        }
+
+        e.preventDefault();
     }
-
-    e.preventDefault();
-}
-
-function hapusData(e){
-    if (e.target.type=="button") {                
-        tabel.deleteRow(tabel.rows.namedItem(e.target.id).sectionRowIndex);
+    function hapusData(e){
+        if (e.target.type == "button") {                
+            tabel.deleteRow(tabel.rows.namedItem(e.target.id).sectionRowIndex);
+        }
     }
-    form.addEventListener("submit",tampilkanData,false);
-    tabel.addEventListener("click", hapusData, true); 
-
-}
-
+    
+form.addEventListener("submit",tampilkanData,false);
+tabel.addEventListener("click", hapusData, false); 
 
 let data = {
-    nama : '',
-    nim : '',
-    prodi :'',  
-    email :'', 
+    nama : "",
+    nim : "",
+    prodi :"",  
+    email :"", 
     
     set setNama(newNama){
         this.nama = newNama;
@@ -75,4 +73,4 @@ let data = {
     get getEmail(){
         return this.email;
     } 
-}
+};
