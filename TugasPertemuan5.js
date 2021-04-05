@@ -8,6 +8,11 @@ var tabel = document.getElementById("tabel"),
             prodi = document.getElementById("isiProdi"),
             email = document.getElementById("isiEmail");
         
+        if(tabel.rows.namedItem(nim.value)){
+            alert("NIM sudah terdaftar");
+            tabel.deleteRow();
+        }
+        
         student.nama = name.value;
         student.nim = nim.value;
         student.prodi = prodi.value;
