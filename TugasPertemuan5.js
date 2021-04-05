@@ -5,29 +5,29 @@ var tabel = document.getElementById("tabel"),
         var tabel = document.getElementById("tabel"),
             name = document.getElementById("isiNama"),
             nim = document.getElementById("isiNIM");
-            prodi = document.getElementById("isiProdi");
+            prodi = document.getElementById("isiProdi"),
             email = document.getElementById("isiEmail");
         
-        data.nama = name.value;
-        data.nim = nim.value;
-        data.prodi = prodi.value;
-        data.email = email.value;
+        student.nama = name.value;
+        student.nim = nim.value;
+        student.prodi = prodi.value;
+        student.email = email.value;
 
         var baris = tabel.insertRow();
 
-        baris.id = data.nim;
-        baris.insertCell().appendChild(document.createTextNode(data.nama));
-        baris.insertCell().appendChild(document.createTextNode(data.nim));
-        baris.insertCell().appendChild(document.createTextNode(data.prodi));
-        baris.insertCell().appendChild(document.createTextNode(data.email));
+        baris.id = student.nim;
+        baris.insertCell().appendChild(document.createTextNode(student.nama));
+        baris.insertCell().appendChild(document.createTextNode(student.nim));
+        baris.insertCell().appendChild(document.createTextNode(student.prodi));
+        baris.insertCell().appendChild(document.createTextNode(student.email));
 
         var Hapus = document.createElement("input");
             Hapus.type = "button";
             Hapus.value = "Hapus";    
-            Hapus.id = data.nim;       
+            Hapus.id = student.nim;       
             baris.insertCell().appendChild(Hapus);
     
-        if(data.nama == "" || data.nim  == "" || data.prodi == "" || data.email == ""){
+        if(student.nama == "" || student.nim  == "" || student.prodi == "" || student.email == ""){
             alert("Harap lengkapi formulir sebelum menekan tombol daftar");
             tabel.deleteRow();
         }
@@ -43,12 +43,15 @@ var tabel = document.getElementById("tabel"),
 form.addEventListener("submit",tampilkanData,false);
 tabel.addEventListener("click", hapusData, true); 
 
-let data = {
-    nama : "",
-    nim : "",
-    prodi :"",  
-    email :"", 
+function data(nama,nim,prodi,email) {
+    this.nama = nama;
+    this.nim = nim;
+    this.prodi = prodi;
+    this.email = email;
     
+}
+let student = new data();
+student = {
     set setNama(newNama){
         this.nama = newNama;
     },
@@ -73,4 +76,4 @@ let data = {
     get getEmail(){
         return this.email;
     } 
-};
+}
