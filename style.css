@@ -44,6 +44,7 @@ h1,h2,p,b,a{
 .perkenalan, .riwayat_pendidikan, .Keterampilan, .riwayat_pelatihan, .bottom,.bottom_penutup, .bottomawal{
     box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%);
     background-color: #fff;
+    pointer-events: none;
 }
 .margin{
     margin: 16px;
