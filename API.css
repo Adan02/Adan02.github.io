@@ -1,0 +1,36 @@
+/*margin: 10px 0px;(nanti kasih semua h)*/
+body{
+    background-color: rgb(234, 244, 245);
+}
+.pembungkus_konten{
+    max-width: 1400px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+header{
+    text-align: center;
+}
+h1,h2,p,b,a{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 10px 0px;
+}
+.wrapper3{
+    width: 92.7%;
+    float: left;
+    padding:16px;
+}
+.wrapper4{
+    width: 92.7%;
+    float: left;
+    padding:16px ;
+}
+.perkenalan, .riwayat_pendidikan, .Keterampilan, .riwayat_pelatihan, .bottom,.bottom_penutup, .bottomawal{
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%);
+    background-color: #fff;
+}
+.margin{
+    margin: 16px;
+}
+.isi{
+    padding: 16px;
+}
