@@ -1,5 +1,5 @@
 {
-  "homepage": "http://Adan02.github.io/Adan02.github.io/tugasreact.io",
+  "homepage": "http://Adan02.github.io/Adan02.github.io/react.io",
   "name": "tugasreact",
   "version": "0.1.0",
   "private": true,
@@ -15,7 +15,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy":"master -d build",
+    "deploy": "master -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -38,5 +38,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "master": "0.0.14"
   }
 }
