@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Adan02.github.io/static/css/main.425033ea.chunk.css",
+    "main.js": "/Adan02.github.io/static/js/main.6f89627d.chunk.js",
+    "main.js.map": "/Adan02.github.io/static/js/main.6f89627d.chunk.js.map",
+    "runtime-main.js": "/Adan02.github.io/static/js/runtime-main.9526eb42.js",
+    "runtime-main.js.map": "/Adan02.github.io/static/js/runtime-main.9526eb42.js.map",
+    "static/js/2.b50b7580.chunk.js": "/Adan02.github.io/static/js/2.b50b7580.chunk.js",
+    "static/js/2.b50b7580.chunk.js.map": "/Adan02.github.io/static/js/2.b50b7580.chunk.js.map",
+    "static/js/3.5f5dddb8.chunk.js": "/Adan02.github.io/static/js/3.5f5dddb8.chunk.js",
+    "static/js/3.5f5dddb8.chunk.js.map": "/Adan02.github.io/static/js/3.5f5dddb8.chunk.js.map",
+    "index.html": "/Adan02.github.io/index.html",
+    "static/css/main.425033ea.chunk.css.map": "/Adan02.github.io/static/css/main.425033ea.chunk.css.map",
+    "static/js/2.b50b7580.chunk.js.LICENSE.txt": "/Adan02.github.io/static/js/2.b50b7580.chunk.js.LICENSE.txt",
+    "static/media/logo.6ce24c58.svg": "/Adan02.github.io/static/media/logo.6ce24c58.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9526eb42.js",
+    "static/js/2.b50b7580.chunk.js",
+    "static/css/main.425033ea.chunk.css",
+    "static/js/main.6f89627d.chunk.js"
+  ]
+}
