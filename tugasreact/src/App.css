@@ -1,0 +1,75 @@
+body{
+  background-color: rgb(234, 244, 245);
+}
+.pembungkus_konten{
+  max-width: 1400px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+header{
+  text-align: center;
+}
+h1,h2,p,b,a{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 10px 0px;
+}
+.wrapper3{
+  width: 92.7%;
+  float: left;
+  padding:16px;
+}
+.wrapper4{
+  width: 92.7%;
+  float: left;
+  padding:16px ;
+}
+.perkenalan, .riwayat_pendidikan, .Keterampilan, .riwayat_pelatihan, .bottom,.bottom_penutup, .bottomawal{
+  box-shadow: 0 4px 10px 0 rgb(0 0 0 / 20%);
+  background-color: #fff;
+}
+.margin{
+  margin: 16px;
+}
+.isi{
+  padding: 16px;
+}
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
