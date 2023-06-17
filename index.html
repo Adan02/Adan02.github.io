@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <title>Web Pribadi</title>
 </head>
 <body>
@@ -114,6 +117,34 @@
                 </div>
             </div>
         </div>
+        <div id="reader" style="width:600px"></div>
     </div>
 </body>
+    <script>
+        $(document).ready(function(){
+            // import { Html5QrcodeScanner } from "html5-qrcode";
+            function onScanSuccess(decodedText, decodedResult) {
+            // Handle the scanned code as you like, for example:
+                $('input[name="serialNum"]').val(decodedText);
+                console.log(`Code matched = ${decodedText}`, decodedResult);
+            }
+
+            const formatsToSupport = [
+            Html5QrcodeSupportedFormats.QR_CODE,
+            Html5QrcodeSupportedFormats.UPC_A,
+            Html5QrcodeSupportedFormats.UPC_E,
+            Html5QrcodeSupportedFormats.UPC_EAN_EXTENSION,
+            Html5QrcodeSupportedFormats.EAN_13
+            ];
+            const html5QrcodeScanner = new Html5QrcodeScanner(
+            "reader",
+            {
+                fps: 10,
+                qrbox:{width:500,height:350},
+                formatsToSupport:formatsToSupport
+            },
+            /* verbose= */ true);
+            html5QrcodeScanner.render(onScanSuccess);
+        });
+    </script>
 </html>
