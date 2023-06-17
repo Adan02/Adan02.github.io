@@ -8,6 +8,7 @@
     <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"
         integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Web Pribadi</title>
 </head>
 <body>
@@ -117,9 +118,9 @@
                 </div>
             </div>
         </div>
+        <input name="serialNum" value="">
+        <div id="reader" class=""></div>
     </div>
-    <input name="serialNum" value="">
-    <div id="reader" style="width:600px;"></div>
 </body>
     <script>
         $(document).ready(function(){
@@ -141,7 +142,7 @@
             "reader",
             {
                 fps: 10,
-                qrbox:{width:500,height:350},
+                qrbox:{width:350,height:350},
                 formatsToSupport:formatsToSupport
             },
             /* verbose= */ true);
