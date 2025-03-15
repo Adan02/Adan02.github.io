@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ila & Agung - Wedding Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f9f6f2;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .date-location {
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+        }
+
+        .details {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .detail-card {
+            background: white;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .detail-card i {
+            font-size: 2rem;
+            color: #c19a6b;
+            margin-bottom: 1rem;
+        }
+
+        .rsvp-form {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #c19a6b;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #a5825d;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .date-location {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <h1>Ila & Agung</h1>
+        <div class="date-location">
+            <p>Maret 15, 2025</p>
+            <p>Hotel FUFUFAFA</p>
+        </div>
+    </section>
+
+    <section class="details">
+        <!-- <div class="detail-card">
+            <i class="fas fa-heart"></i>
+            <h2>Our Story</h2>
+            <p>Two souls met on a rainy afternoon in Paris, and the rest is history...</p>
+        </div> -->
+
+        <div class="detail-card">
+            <i class="fas fa-calendar-alt"></i>
+            <h2>Wedding Details</h2>
+            <p>Ceremony: 15:00 </p>
+            <p>Berlokasi di Hotel FUFUFAFA</p>
+        </div>
+
+        <div class="detail-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h2>Location</h2>
+            <p>Hotel fufuffafa</p>
+            <p>Jl. tun abdul razak</p>
+        </div>
+
+        <!-- <div class="detail-card">
+            <i class="fas fa-envelope"></i>
+            <h2>RSVP</h2>
+            <form class="rsvp-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <select required>
+                    <option value="">Will you attend?</option>
+                    <option value="yes">Yes, I'll be there!</option>
+                    <option value="no">Regretfully decline</option>
+                </select>
+                <textarea placeholder="Dietary Restrictions" rows="4"></textarea>
+                <button type="submit">Submit RSVP</button>
+            </form>
+        </div> -->
+    </section>
+
+    <footer>
+        <p>© 2025 Ila & Agung Wedding. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple form submission handling
+        document.querySelector('.rsvp-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your RSVP! We look forward to celebrating with you.');
+            this.reset();
+        });
+
+        // Add smooth scrolling for navigation (if adding navigation links later)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
